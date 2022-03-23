@@ -1,0 +1,23 @@
+public static BluetoothSerialClient getInstance()	//블루투스를 사용할수 있으면 새로 인스턴스 생성
+private BluetoothSerialClient()	//생성된 인스턴스로 블루투스기기 정보 쓰레드 가져오기
+public void claer()		//블루투스가 종료할때 반드시 연결을 닫고 자원을 해지하는 메서드
+public void enableBluetooth(Context context, OnBluetoothEnabledListener onBluetoothEnabledListener)	//블루투스를 사용 가능하게 만들어주는 메서드 사용이 꺼져있다면 사용 선택 요구
+public boolean isEnabled()		//사용가능한 블루투스인지 확인
+public boolean connect(final Context context, final BluetoothDevice device, final BluetoothStreamingHandler bluetoothStreamingHandler) 	//블루투스 디바이스와 시리얼로 연결, 연결 불가 상태라면 enableBluetooth로 다시 연결
+public Set<BluetoothDevice> getPairedDevices()		//과거 페어링 되었던 블루투스 디바이스 목록 가져온다
+public boolean scanDevices(Context context, OnScanListener OnScanListener)		//주변 연결 가능한 디바이스 스캔
+public void cancelScan(Context context)		//스캔 취소
+public boolean isConnection()	//블루투스 디바이스와 연결 되어있는지 상태를 가져온다.
+public BluetoothDevice getConnectedDevice()		//연결된 블루투스 디바이스가 없다면 NULL
+private void connectClient()		//
+private void manageConnectedSocket(BluetoothSocket socket) throws IOException		//블루투스로 받은 소켓을 관리하는 Stream
+private void callConnectedHandlerEvent()		//연결 핸들러 이벤트 호출?
+private boolean write(final byte[] buffer)
+private boolean close()		//연결된 디바이스 끊기
+private Runnable mCloseRunable = new Runnable()		//
+private Runnable mReadRunnable = new Runnable()		//받아온 데이터를 버퍼에 옮기는 작업
+private BroadcastReceiver mDiscoveryReceiver = new BroadcastReceiver()
+public static class BluetoothUpActivity extends Activity		//디바이스에 블루투스 
+public static interface OnBluetoothEnabledListener		//블루투스를 ON OFF 여부 리스너
+public static interface OnScanListener		//블루투스 스캔 여부 리스너
+public abstract static class BluetoothStreamingHandler
